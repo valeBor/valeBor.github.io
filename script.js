@@ -63,14 +63,18 @@ const details = {
     ],
     link: { label: 'Ver repositorio en GitHub', href: 'https://github.com/YeilaInsaurralde/DeliShey' }
   },
-  faunasur: {
-    title: 'Centro de Rescate FaunaSur',
-    category: 'JAVA · PROGRAMACIÓN ORIENTADA A OBJETOS',
-    summary: 'Un sistema de consola para administrar animales en un centro de rescate y practicar un diseño orientado a objetos.',
+  collectsun: {
+    title: 'CollectSun',
+    category: 'REACT · DESARROLLO FRONTEND',
+    summary: 'Una tienda online de arte y accesorios desarrollada con React y publicada en Vercel.',
     sections: [
-      { title: 'Qué permite hacer', items: ['Registrar aves, mamíferos y reptiles con sus atributos particulares.', 'Consultar y filtrar animales por estado de salud.', 'Calcular el costo diario de cada animal.', 'Detectar registros duplicados y comunicar el error mediante una excepción personalizada.'] },
-      { title: 'Conceptos aplicados', text: 'Clase abstracta Animal, herencia, encapsulamiento, polimorfismo, interfaces, enumerados, colecciones y excepciones chequeadas. Diseño documentado con UML.' },
-      { title: 'Contexto', text: 'Proyecto académico de Programación II.' }
+      { title: 'Qué permite hacer', items: ['Explorar el catálogo y filtrar productos por categoría.', 'Consultar el detalle de cada producto.', 'Agregar productos al carrito, consultar cantidades y calcular el total.', 'Administrar productos: alta, edición y eliminación.'] },
+      { title: 'Desarrollo técnico', text: 'Frontend con React y Vite. Navegación con React Router, estado del carrito compartido mediante Context API y consumo de una API de productos en MockAPI.' },
+      { title: 'Publicación', text: 'El sitio está publicado en Vercel y su código se puede consultar en GitHub.' }
+    ],
+    links: [
+      { label: 'Ver sitio publicado', href: 'https://proyecto-react-collectsun.vercel.app' },
+      { label: 'Ver código en GitHub', href: 'https://github.com/valeBor/proyecto_React_collectsun' }
     ]
   }
 };
@@ -109,15 +113,16 @@ if (typeof dialog.showModal === 'function') {
           dialogContent.append(list);
         }
       });
-      if (project.link) {
+      const links = project.links || (project.link ? [project.link] : []);
+      links.forEach((projectLink) => {
         const link = document.createElement('a');
         link.className = 'button button-dark';
-        link.href = project.link.href;
-        link.textContent = project.link.label;
+        link.href = projectLink.href;
+        link.textContent = projectLink.label;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         dialogLinks.append(link);
-      }
+      });
       if (project.note) {
         const note = document.createElement('p');
         note.textContent = project.note;

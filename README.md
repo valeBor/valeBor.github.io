@@ -12,7 +12,7 @@ Presenta mi formación, habilidades y proyectos académicos y colaborativos.
 
 - **WorkTrack:** sistema de control de asistencia con QR.
 - **DeliShey:** tienda online.
-- **FaunaSur:** gestión de un centro de rescate de animales con Java.
+- **CollectSun:** tienda online desarrollada con React, con catálogo, categorías y carrito.
 
 ## Tecnologías del portfolio
 
